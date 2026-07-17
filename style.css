@@ -156,7 +156,7 @@ body {
 /* Logo */
 .logo-wrapper { display:flex; flex-direction:column; align-items:center; margin-bottom:34px; animation: fadeUp .8s .15s ease both; }
 .logo-ring {
-  width:148px; height:148px; border-radius:50%;
+  width:300px; height: 300px; border-radius:50%;
   background: rgba(255,255,255,0.0);
   display:flex; align-items:center; justify-content:center;
   filter: drop-shadow(0 8px 24px rgba(30,90,140,0.22));
