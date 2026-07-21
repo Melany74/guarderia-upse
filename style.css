@@ -126,10 +126,14 @@ body {
     position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 2px;
     background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
-    padding: 10px 16px 18px; border-bottom: 1.5px solid rgba(255,255,255,0.6);
-    max-height: 0; overflow: hidden; transition: max-height .35s ease;
+    padding: 0 16px; border-bottom: 0 solid rgba(255,255,255,0.6);
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease, padding .35s ease, border-bottom-width .35s ease;
   }
-  .nav-links.open { max-height: 400px; }
+  .nav-links.open {
+    max-height: 400px; padding: 10px 16px 18px;
+    border-bottom-width: 1.5px;
+  }
   .nav-link { padding: 12px 14px; }
 }
 
@@ -386,13 +390,18 @@ h1 .highlight::after { content:''; position:absolute; left:0; right:0; bottom:-4
   /* Antes se ocultaba el nombre por completo en móvil (nav-brand span {display:none}).
      Ahora se muestra en una sola línea truncada (con "...") para que nunca empuje
      ni oculte el botón de menú (☰). */
-  .navbar-inner { padding: 8px 14px; }
-  .nav-brand { gap: 6px; }
-  .nav-brand-logo { width: 30px; height: 30px; }
+  .navbar-inner { padding: 14px 16px; }
+  .nav-brand { gap: 8px; }
+  .nav-brand-logo { width: 36px; height: 36px; }
   .nav-brand span {
-    font-size: .68rem;
+    font-size: .72rem;
     line-height: 1.2;
   }
+
+  /* NUEVO: más aire arriba del hero en móvil, para que la parte de "Inicio"
+     (logo + título) tenga más espacio antes de llegar al badge azul */
+  .hero { padding-top: 130px; }
+  .badge { margin-top: 8px; }
 }
 @media (max-width:400px) {
   .benefits-grid { grid-template-columns:1fr; }
